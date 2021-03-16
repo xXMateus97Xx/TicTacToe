@@ -1,0 +1,103 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:TicTacToe.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TicTacToe.Converters;assembly=TicTacToe"
+        mc:Ignorable="d" d:DesignWidth="530" d:DesignHeight="590"
+        Width="530" Height="600"
+        x:Class="TicTacToe.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="TicTacToe">
+
+    <Window.Resources>
+        <local:OValueConverter x:Key="oValueConverter"/>
+        <local:XValueConverter x:Key="xValueConverter"/>
+    </Window.Resources>
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto" 
+        ColumnDefinitions="Auto,Auto,Auto" 
+        Margin="40" 
+        Width="480">
+
+        <Button Width="160" Height="160" Command="{Binding PlayTurn}" CommandParameter="0x0" Grid.Row="0" Grid.Column="0">
+            <Panel>
+                <Image Source="/Assets/O.png" IsVisible="{Binding Symbols[0][0], Converter={StaticResource oValueConverter}}" Width="100"
+                                Height="100" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                <Image Source="/Assets/X.png" IsVisible="{Binding Symbols[0][0], Converter={StaticResource xValueConverter}}" Width="140"
+                                Height="140" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Panel>
+        </Button>
+        <Button Width="160" Height="160" Command="{Binding PlayTurn}" CommandParameter="0x1" Grid.Row="0" Grid.Column="1">
+            <Panel>
+                <Image Source="/Assets/O.png" IsVisible="{Binding Symbols[0][1], Converter={StaticResource oValueConverter}}" Width="100"
+                                Height="100" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                <Image Source="/Assets/X.png" IsVisible="{Binding Symbols[0][1], Converter={StaticResource xValueConverter}}" Width="140"
+                                Height="140" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Panel>
+        </Button>
+        <Button Width="160" Height="160" Command="{Binding PlayTurn}" CommandParameter="0x2" Grid.Row="0" Grid.Column="2">
+            <Panel>
+                <Image Source="/Assets/O.png" IsVisible="{Binding Symbols[0][2], Converter={StaticResource oValueConverter}}" Width="140"
+                                Height="100" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                <Image Source="/Assets/X.png" IsVisible="{Binding Symbols[0][2], Converter={StaticResource xValueConverter}}" Width="140"
+                                Height="140" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Panel>
+        </Button>
+        <Button Width="160" Height="160" Command="{Binding PlayTurn}" CommandParameter="1x0" Grid.Row="1" Grid.Column="0">
+            <Panel>
+                <Image Source="/Assets/O.png" IsVisible="{Binding Symbols[1][0], Converter={StaticResource oValueConverter}}" Width="100"
+                                Height="100" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                <Image Source="/Assets/X.png" IsVisible="{Binding Symbols[1][0], Converter={StaticResource xValueConverter}}" Width="140"
+                                Height="140" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Panel>
+        </Button>
+        <Button Width="160" Height="160" Command="{Binding PlayTurn}" CommandParameter="1x1" Grid.Row="1" Grid.Column="1">
+            <Panel>
+                <Image Source="/Assets/O.png" IsVisible="{Binding Symbols[1][1], Converter={StaticResource oValueConverter}}" Width="100"
+                                Height="100" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                <Image Source="/Assets/X.png" IsVisible="{Binding Symbols[1][1], Converter={StaticResource xValueConverter}}" Width="140"
+                                Height="140" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Panel>
+        </Button>
+        <Button Width="160" Height="160" Command="{Binding PlayTurn}" CommandParameter="1x2" Grid.Row="1" Grid.Column="2">
+            <Panel>
+                <Image Source="/Assets/O.png" IsVisible="{Binding Symbols[1][2], Converter={StaticResource oValueConverter}}" Width="100"
+                                Height="100" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                <Image Source="/Assets/X.png" IsVisible="{Binding Symbols[1][2], Converter={StaticResource xValueConverter}}" Width="140"
+                                Height="140" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Panel>
+        </Button>
+        <Button Width="160" Height="160" Command="{Binding PlayTurn}" CommandParameter="2x0" Grid.Row="2" Grid.Column="0">
+            <Panel>
+                <Image Source="/Assets/O.png" IsVisible="{Binding Symbols[2][0], Converter={StaticResource oValueConverter}}" Width="100"
+                                Height="100" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                <Image Source="/Assets/X.png" IsVisible="{Binding Symbols[2][0], Converter={StaticResource xValueConverter}}" Width="140"
+                                Height="140" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Panel>
+        </Button>
+        <Button Width="160" Height="160" Command="{Binding PlayTurn}" CommandParameter="2x1" Grid.Row="2" Grid.Column="1">
+            <Panel>
+                <Image Source="/Assets/O.png" IsVisible="{Binding Symbols[2][1], Converter={StaticResource oValueConverter}}" Width="100"
+                                Height="100" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                <Image Source="/Assets/X.png" IsVisible="{Binding Symbols[2][1], Converter={StaticResource xValueConverter}}" Width="140"
+                                Height="140" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Panel>
+        </Button>
+        <Button Width="160" Height="160" Command="{Binding PlayTurn}" CommandParameter="2x2" Grid.Row="2" Grid.Column="2">
+            <Panel>
+                <Image Source="/Assets/O.png" IsVisible="{Binding Symbols[2][2], Converter={StaticResource oValueConverter}}" Width="100"
+                                Height="100" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                <Image Source="/Assets/X.png" IsVisible="{Binding Symbols[2][2], Converter={StaticResource xValueConverter}}" Width="140"
+                                Height="140" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Panel>
+        </Button>
+    
+        <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,20,0,0" Content="{Binding WinnerMessage}"/>
+        <Button Width="160" Height="30" Margin="0,20,0,0" Content="Restart" Command="{Binding ResetGame}" Grid.Row="3" Grid.Column="2"/>
+    </Grid>
+</Window>
